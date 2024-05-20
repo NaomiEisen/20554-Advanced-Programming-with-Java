@@ -1,0 +1,28 @@
+.text-area {
+    -fx-background-insets: 0;
+    -fx-background-color:   #fbfbfb;
+}
+
+.text-area .content {
+    -fx-background-color:  #fbfbfb;
+}
+
+/* Highlighted VBox */
+.vbox.highlight {
+    -fx-background-color: #ffcc80 !important; /* Custom highlight background color */
+    -fx-border-color: #ff5722 !important; /* Custom highlight border color */
+    -fx-border-width: 2 !important; /* Highlight border width */
+}
+
+/* Highlighted TextArea */
+.text-area.highlighted {
+    -fx-border-color: #f1c8d0; /* Custom highlight border color */
+    -fx-border-width: 1; /* Highlight border width */
+}
+
+/* Default styles for VBox */
+.vbox {
+    -fx-background-color:  #fbfbfb;
+	-fx-border-color:  #e8e8e8;
+	-fx-border-radius: 10
+}
