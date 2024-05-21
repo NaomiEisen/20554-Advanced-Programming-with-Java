@@ -39,7 +39,7 @@
                   <Insets bottom="10.0" left="3.0" right="10.0" top="10.0" />
                </HBox.margin>
                <children>
-                  <TextField maxHeight="1.7976931348623157E308" promptText="Search" style="-fx-background-color: #ffffff;" />
+                  <TextField editable="false" maxHeight="1.7976931348623157E308" promptText="Search" style="-fx-background-color: #ffffff;" />
                   <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@search.jpg" />
@@ -135,21 +135,18 @@
             <ListView fx:id="listView" maxHeight="1.7976931348623157E308" minHeight="-Infinity" opacity="0.25" prefWidth="200.0" style="-fx-background-color: #e8e8e8;" />
             <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="435.0" style="-fx-background-color: #ffffff;">
                <top>
-                  <HBox alignment="CENTER_RIGHT" minHeight="-Infinity" prefWidth="435.0" BorderPane.alignment="TOP_RIGHT">
+                  <HBox alignment="CENTER_RIGHT" minHeight="-Infinity" prefWidth="435.0" BorderPane.alignment="CENTER">
                      <children>
-                        <TextArea fx:id="textAreaWord" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="30.0" promptText="Word">
+                        <TextArea fx:id="textAreaWord" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="25.0" promptText="Word" style="-fx-focus-color: #ffbdca; -fx-faint-focus-color: transparent;">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
-                           <padding>
-                              <Insets top="2.0" />
-                           </padding>
                         </TextArea>
                      </children>
                   </HBox>
                </top>
                <center>
-                  <TextArea fx:id="textAreaDefenition" prefHeight="469.0" prefWidth="435.0" promptText="Word's defenition" BorderPane.alignment="CENTER" />
+                  <TextArea fx:id="textAreaDefenition" prefHeight="469.0" prefWidth="435.0" promptText="Word's defenition" style="-fx-focus-color: #ffbdca; -fx-faint-focus-color: transparent;" BorderPane.alignment="CENTER" />
                </center>
                <bottom>
                   <Button fx:id="saveButton" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#saveButtonPressed" prefWidth="66.0" style="-fx-background-color: #a82d5e;" text="Save" textFill="WHITE" BorderPane.alignment="CENTER_RIGHT">

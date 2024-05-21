@@ -1,0 +1,6 @@
+
+.highlight {
+    -fx-border-color: #a83e4f !important; /* Highlight border color /*
+    -fx-border-width: 2 !important; /* Border width */
+    -fx-effect: dropshadow(three-pass-box, #a83e4f, 0, 0, 3, 3);
+}

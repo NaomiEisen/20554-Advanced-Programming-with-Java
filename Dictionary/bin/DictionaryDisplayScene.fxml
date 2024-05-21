@@ -28,7 +28,7 @@
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </padding>
                <effect>
-                  <DropShadow color="#ff99adad" height="6.17" radius="4.7925" width="15.0" />
+                  <DropShadow color="#ffc5d1" height="2.0" offsetX="1.0" offsetY="1.0" radius="0.5" width="2.0" />
                </effect>
             </Label>
             <Separator maxHeight="1.7976931348623157E308" orientation="VERTICAL" prefWidth="6.0">
@@ -63,7 +63,7 @@
          <children>
             <HBox alignment="TOP_CENTER">
                <children>
-                  <Button alignment="BOTTOM_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#displayAllButtonPressed" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #ffffff;" text=" Display All" textFill="#c39393">
+                  <Button alignment="BOTTOM_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#autoFillButtonPressed" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #ffffff;" text=" Auto Fill" textFill="#c39393">
                      <HBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </HBox.margin>
@@ -129,6 +129,7 @@
                   <Insets top="8.0" />
                </VBox.margin>
             </Separator>
+            <Button mnemonicParsing="false" onAction="#displayAllButtonPressed" text="Button" />
          </children>
       </VBox>
    </left>
@@ -136,11 +137,11 @@
       <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
          <children>
             <ListView fx:id="listView" maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefWidth="200.0" style="-fx-background-color: #fbfbfb;" />
-            <VBox fx:id="vbox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="537.0" prefWidth="381.0" style="-fx-background-color: #fbfbfb; -fx-border-color: #e8e8e8; -fx-border-radius: 10;" stylesheets="@textAreaStyles.css">
+            <VBox fx:id="vboxTextArea" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="537.0" prefWidth="381.0" style="-fx-background-color: #fbfbfb; -fx-border-color: #e8e8e8; -fx-border-radius: 10; -fx-background-radius: 10;" stylesheets="@vboxStyles.css">
                <children>
                   <HBox alignment="TOP_RIGHT" prefHeight="50.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="DoneButton" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#DoneButtonPressed" prefHeight="0.0" style="-fx-background-color: transparent;" visible="false">
+                        <Button fx:id="doneButton" disable="true" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#doneButtonPressed" prefHeight="0.0" style="-fx-background-color: transparent;">
                            <graphic>
                               <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -149,7 +150,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="editButton" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#EditButtonPressed" style="-fx-background-color: transparent;">
+                        <Button fx:id="editButton" disable="true" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#EditButtonPressed" style="-fx-background-color: transparent;">
                            <graphic>
                               <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -158,7 +159,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="deleteButton" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#DeleteButtonPressed" style="-fx-background-color: transparent;">
+                        <Button fx:id="deleteButton" disable="true" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#DeleteButtonPressed" style="-fx-background-color: transparent;">
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
@@ -175,7 +176,7 @@
                         <Insets top="8.0" />
                      </padding>
                   </HBox>
-                  <TextArea fx:id="textAreaWord" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="44.0" prefWidth="424.0" style="-fx-text-fill: #c39393;" stylesheets="@textAreaStyles.css">
+                  <TextArea fx:id="textAreaWord" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="44.0" prefWidth="424.0" style="-fx-text-fill: #421920;" stylesheets="@textAreaStyles.css">
                      <font>
                         <Font name="Times New Roman Bold" size="22.0" />
                      </font>
@@ -183,7 +184,7 @@
                         <Insets top="5.0" />
                      </padding>
                   </TextArea>
-                  <TextArea fx:id="textAreaDefenition" editable="false" maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefHeight="424.0" prefWidth="424.0" stylesheets="@textAreaStyles.css">
+                  <TextArea fx:id="textAreaDefinition" editable="false" maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefHeight="424.0" prefWidth="424.0" stylesheets="@textAreaStyles.css">
                      <font>
                         <Font name="Times New Roman Italic" size="15.0" />
                      </font>
