@@ -32,13 +32,13 @@ public class DictionaryDisplaySceneController {
 	@FXML // TextField for searching a word in the dictionary
 	private TextField searchTextField;
 
-	@FXML
+	@FXML // Button to add predefined values to the dictionary
 	private Button autoFillButton;
 
-	@FXML
+	@FXML // Button to reset the program
 	private Button resetButton;
 
-	@FXML
+	@FXML // Button to add a new word to the dictionary
 	private Button addButton;
 
     @FXML // Button to enable editing the selected dictionary value
@@ -65,6 +65,9 @@ public class DictionaryDisplaySceneController {
 		// set wrap text to true for cleaner display
 		textAreaWord.setWrapText(true);
 		textAreaDefinition.setWrapText(true);
+		
+		// set away focus from the search TextField
+		//searchTextField.fo
 		
 		// set vbox's style to it's default style
 		vboxTextArea.getStyleClass().add("default");
