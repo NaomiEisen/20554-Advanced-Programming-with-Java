@@ -29,8 +29,17 @@ public class DictionaryDisplaySceneController {
 	@FXML // ListView for displaying the words of the dictionary
     private ListView<String> listView;
 	
-	 @FXML // TextField for searching a word in the dictionary
+	@FXML // TextField for searching a word in the dictionary
 	private TextField searchTextField;
+
+	@FXML
+	private Button autoFillButton;
+
+	@FXML
+	private Button resetButton;
+
+	@FXML
+	private Button addButton;
 
     @FXML // Button to enable editing the selected dictionary value
     private Button editButton;
@@ -106,6 +115,7 @@ public class DictionaryDisplaySceneController {
 		
 		// disable the edit and the delete buttons
 		disableTextAreaButtons(true);
+		disableDictionaryActions(true);
 
 		// highlight the VBox
 		setVBoxHighlight(true);
@@ -116,6 +126,29 @@ public class DictionaryDisplaySceneController {
 		// delete the previous version of this word
 		dictionary.removeWord(textAreaWord.getText());
 	}
+
+	@FXML
+	/*  Handles the event when the done button is pressed. Saves the updated version
+	 * of the edited word */
+	public void doneButtonPressed(ActionEvent event) {
+		// Add the word and definition to the dictionary
+		dictionary.addWord(textAreaWord.getText(), textAreaDefinition.getText());
+
+		// set VBox style to it's default style
+		setVBoxHighlight(false);
+
+		// disable editing of the text areas
+		setEditableTextAreas(false);
+		
+		// enable add/reset/autoFill buttons
+		disableDictionaryActions(false);
+
+		// disable the Done button
+		doneButton.setDisable(true);
+
+		// update listView to display all dictionary content
+		updateFilteredWords("");
+	}
 	 
 	 
     @FXML 
@@ -125,9 +158,10 @@ public class DictionaryDisplaySceneController {
 		// remove word from dictionary
 		dictionary.removeWord(textAreaWord.getText());
 		
-		// disable edit and delete buttons
+		// disable the edit and the delete buttons
     	disableTextAreaButtons(true);
-
+    	disableDictionaryActions(false);
+    	
 		// set VBox style to it's default style
 		setVBoxHighlight(false);
 
@@ -138,25 +172,6 @@ public class DictionaryDisplaySceneController {
 		updateFilteredWords("");
     }
 
-    
-    @FXML
-    /*  Handles the event when the done button is pressed. Saves the updated version of the edited word  */
-	public void doneButtonPressed(ActionEvent event) {
-		// Add the word and definition to the dictionary
-		dictionary.addWord(textAreaWord.getText(), textAreaDefinition.getText());
-
-		// set VBox style to it's default style
-		setVBoxHighlight(false);
-
-		// disable editing of the text areas
-		setEditableTextAreas(false);
-
-		// disable the Done button
-		doneButton.setDisable(true);
-
-		// update listView to display all dictionary content
-		updateFilteredWords("");
-	}
 
     @FXML
     /* Automatically populates the dictionary with predefined content for testing purposes */
@@ -230,10 +245,28 @@ public class DictionaryDisplaySceneController {
         textAreaDefinition.clear();
     }
     
-    /* Utility method - sets the 'editable' attribute of the text area accordingly to the inputed value */
+    /* Utility method - sets the 'editable' attribute of the text area based on the 
+     * provided value */
     private void setEditableTextAreas(boolean editable) {
     	textAreaWord.setEditable(editable);
     	textAreaDefinition.setEditable(editable);
+    }
+    
+    /* Utility method - sets the 'disable' attribute of the buttons within the text area
+     *  based on the provided value */
+    private void disableTextAreaButtons(boolean disable) {
+    	deleteButton.setDisable(disable);
+    	editButton.setDisable(disable);
+    }
+    
+    /* Utility method - sets the 'disable' attribute of the dictionary elements based on 
+     * the provided value */
+    private void disableDictionaryActions(boolean disable) {
+    	addButton.setDisable(disable);
+    	autoFillButton.setDisable(disable);
+    	resetButton.setDisable(disable);
+    	searchTextField.setDisable(disable);
+    	listView.setDisable(disable);
     }
     
     /* Utility method - sets VBox highlight style accordingly to the inputed value */
@@ -242,11 +275,6 @@ public class DictionaryDisplaySceneController {
     	
         if (highlight) // if highlight is true - sets the highlight style for the VBox
         	vboxTextArea.getStyleClass().add("highlight");
-    }
-    
-    private void disableTextAreaButtons(boolean disable) {
-    	deleteButton.setDisable(disable);
-    	editButton.setDisable(disable);
     }
 
 } // end of class DictionaryDisplaySceneController

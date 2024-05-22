@@ -31,16 +31,21 @@ public class DictionaryData {
         return dictionary;
     }
 
-	/* Adds new word to the dictionary */
+	/* Adds a new word to the dictionary if the provided word and definition are not empty. 
+	 * If the word already exists, its definition will be updated. */
 	public void addWord(String word, String definition) {
 		// trim leading and trailing spaces from text
 		word = word.trim();
 		definition = definition.trim();
 		
+		// if word and definition are not empty - add to dictionary
 		if (word != null && !(word.isEmpty()) && 
 				definition != null && !(definition.isEmpty())) {
 			
-			// if word and definition are not empty - add to dictionary
+			 // capitalize the first letter of the word
+	        word = word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();
+			
+	        // add to dictionary
 			dictionary.put(word, definition);
 			System.out.println("Word added: " + word);
 		}
@@ -61,12 +66,29 @@ public class DictionaryData {
 			System.out.println("Word not found: " + word);
 		}
 	}
+	
+	public void displayAllWords() {
+		if (dictionary.isEmpty()) {
+			System.out.println("Dictionary is empty.");
+		} else {
+			System.out.println("Dictionary contents:");
+			for (Map.Entry<String, String> entry : dictionary.entrySet()) {
+				System.out.println(entry.getKey() );
+				//+ ": " + entry.getValue()
+			}
+		}
 
-	public void autoFill() {
-		
+	}
+	
+	/* Clears all dictionary content */ 
+    public void clearAllWords() {
+        dictionary.clear();
+    }
+    
+    /* populates the dictionary with the defined content for testing purposes */
+    public void autoFill() {
 		addWord("Apple" , "A round fruit with shiny red or green skin "
 				+ "that is fairly hard and white inside.");
-		addWord("Apple-cheeked" , "Having round pink cheeks and looking healthy.");
 		addWord("Applejack" , "a strong alcoholic drink made from cider "
 				+ "(= an alcoholic drink made from the juice of apples).");
 		addWord("Clinomania" , "An excessive desire to stay in bed.");
@@ -92,7 +114,7 @@ public class DictionaryData {
 		addWord("Ken" , "Range of what one can know or understand.");
 		addWord("Scrumdiddlyumptious " , "extremely tasty; delicious.");
 		addWord("Kaput" , "ruined; done for; demolished.");
-		addWord("Supercalifragilisticexpialidocious" , "extraordinarily good; wonderful.");
+		addWord("supercalifragilisticexpialidocious" , "extraordinarily good; wonderful.");
 		addWord("long-word" , "Just to test the text area text wrap\nyou can ignore it \n\n\n\n\n\n\n\n\n\n\n\n\n"
 				+ " \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n bla bla bla ");
 		
@@ -102,21 +124,4 @@ public class DictionaryData {
 				+ "Its fur is a gentle shade of silver, with delicate patches of warm, amber hues, "
 				+ "giving it a uniquely charming and picturesque appearance.");
 	}
-	
-	public void displayAllWords() {
-		if (dictionary.isEmpty()) {
-			System.out.println("Dictionary is empty.");
-		} else {
-			System.out.println("Dictionary contents:");
-			for (Map.Entry<String, String> entry : dictionary.entrySet()) {
-				System.out.println(entry.getKey() + ": " + entry.getValue());
-			}
-		}
-
-	}
-	
-	/* Clears all dictionary content */ 
-    public void clearAllWords() {
-        dictionary.clear();
-    }
 } // end of class DictionaryData

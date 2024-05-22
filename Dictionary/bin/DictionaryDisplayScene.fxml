@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DictionaryDisplaySceneController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DictionaryDisplaySceneController">
    <top>
       <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="39.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
          <children>
@@ -63,7 +63,7 @@
          <children>
             <HBox alignment="TOP_CENTER">
                <children>
-                  <Button alignment="BOTTOM_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#autoFillButtonPressed" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #ffffff;" text=" Auto Fill" textFill="#c39393">
+                  <Button fx:id="autoFillButton" alignment="BOTTOM_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#autoFillButtonPressed" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #ffffff;" text=" Auto Fill" textFill="#c39393">
                      <HBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </HBox.margin>
@@ -90,7 +90,7 @@
             </Separator>
             <HBox alignment="TOP_CENTER">
                <children>
-                  <Button alignment="BOTTOM_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#resetButtonPressed" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #ffffff;" text="   Reset" textFill="#c39393">
+                  <Button fx:id="resetButton" alignment="BOTTOM_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#resetButtonPressed" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #ffffff;" text="   Reset" textFill="#c39393">
                      <HBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </HBox.margin>
@@ -113,7 +113,7 @@
                </padding>
             </Separator>
             <HBox />
-            <Button maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#addButtonPressed" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #a82d5e;" text="Add" textFill="WHITE">
+            <Button fx:id="addButton" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#addButtonPressed" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #a82d5e;" text="Add" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
                </VBox.margin>
@@ -129,14 +129,14 @@
                   <Insets top="8.0" />
                </VBox.margin>
             </Separator>
-            <Button mnemonicParsing="false" onAction="#displayAllButtonPressed" text="Button" />
+            <Button mnemonicParsing="false" onAction="#displayAllButtonPressed" text="Button" visible="false" />
          </children>
       </VBox>
    </left>
    <center>
-      <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #ffffff;" BorderPane.alignment="TOP_LEFT">
          <children>
-            <ListView fx:id="listView" maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefWidth="200.0" style="-fx-background-color: #fbfbfb;" />
+            <ListView fx:id="listView" centerShape="false" fixedCellSize="24.0" maxWidth="-Infinity" prefHeight="542.0" prefWidth="200.0" style="-fx-background-color: #fbfbfb;" />
             <VBox fx:id="vboxTextArea" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="537.0" prefWidth="381.0" style="-fx-background-color: #fbfbfb; -fx-border-color: #e8e8e8; -fx-border-radius: 10; -fx-background-radius: 10;" stylesheets="@vboxStyles.css">
                <children>
                   <HBox alignment="TOP_RIGHT" prefHeight="50.0" prefWidth="200.0">
@@ -184,7 +184,7 @@
                         <Insets top="5.0" />
                      </padding>
                   </TextArea>
-                  <TextArea fx:id="textAreaDefinition" editable="false" maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefHeight="424.0" prefWidth="424.0" stylesheets="@textAreaStyles.css">
+                  <TextArea fx:id="textAreaDefinition" editable="false" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefHeight="448.0" prefWidth="424.0" stylesheets="@textAreaStyles.css">
                      <font>
                         <Font name="Times New Roman Italic" size="15.0" />
                      </font>
