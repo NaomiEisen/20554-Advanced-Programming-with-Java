@@ -1,5 +1,5 @@
 /**
- * The Flight class represents a flight that departs from one airport to another.
+ * Flight class - represents a flight that departs from one airport to another.
  * It extends Thread to allow for concurrent execution of flights.
  */
 public class Flight extends Thread {

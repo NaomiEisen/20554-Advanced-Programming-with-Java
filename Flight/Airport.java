@@ -5,7 +5,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * The Airport class represents an airport with a name and a number of runways.
+ * Airport class - represents an airport with a name and a number of runways.
  * It includes validation for the name and the number of runways. The class also 
  * provides methods for managing the assignment of runways for flight departures 
  * and landings.

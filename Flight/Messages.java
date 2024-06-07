@@ -1,5 +1,5 @@
 /**
- * The Messages class encapsulates static methods for generating informative messages
+ * Messages class - encapsulates static methods for generating informative messages
  * related to flight operations in an airport simulation.
  */
 public class Messages {
@@ -10,7 +10,7 @@ public class Messages {
 	 * @param runway the number of the departure runway
 	 */
 	public static void depart(Flight flight, int runway) {
-		System.out.println("༄‿︵‿ ✈︎ ‧₊˚☁️	" + flight + "has departed on runway" + runway);
+		System.out.println(String.format("%-16s%s has departed on runway %d", "︵‿︵‿✈︎ ‧₊˚☁️", flight, runway));
 	}
 
 	/**
@@ -19,7 +19,7 @@ public class Messages {
 	 * @param flight the flight object that failed to depart
 	 */
 	public static void departFailed(Flight flight) {
-		System.out.println("⛝" +  flight + "could not depart due to no available runways");
+		 System.out.println(String.format("%7s%14s could not depart due to no available runways", "⛝",flight));
 	}
 	
 	/**
@@ -30,8 +30,8 @@ public class Messages {
 	 * @param flightID the ID of the flight that freed the runway
 	 */
 	public static void free(int runway,  String airport , int flightID) {
-		System.out.printf("☑	Runway number %d in airport %s has been freed by flight number %d\n" , 
-				runway, airport ,flightID );
+		 System.out.println(String.format("%7s%14s number %d in airport %s has been freed by flight number %d",
+				 "☑", "Runway", runway, airport, flightID));
 	}
 	
 	/**
@@ -50,7 +50,7 @@ public class Messages {
 	 * @param flight the flight object that failed to land
 	 */
 	public static void landFailed(Flight flight) {
-		System.out.println("⛝	" + flight + "could not land due to no available runways."
-				+ "Guess this is Manifest 2.");
+		 System.out.println(String.format("%7s%14s could not land due to no available runways. "
+		 		+ "Guess this is Manifest 2", "⛝",flight));
 	}
 } // end of class Messages

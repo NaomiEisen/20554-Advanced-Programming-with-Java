@@ -1,7 +1,11 @@
 import java.util.Random;
-
-public class Main {
-	static final int NUMBER_FLIGHTS = 3; 
+/**
+ * Main class -  contains the main method to run the airport simulation.
+ * It creates airports, generates flights, and starts flight threads.
+ * The simulation waits for all flight threads to finish before exiting.
+ */
+public class FlightSimulation {
+	static final int NUMBER_FLIGHTS = 10; 
 	public static void main(String[] args) {
 		Airport benGurion = new Airport("Ben-Gurion" , 3);
 		Airport hartsfield = new Airport("Hartsfield-Jackson" , 3);
@@ -10,7 +14,11 @@ public class Main {
 		Random random = new Random();
 
         for (int i = 0; i < arrFlight.length; i++) {
-            arrFlight[i] = createFlight(i, random.nextBoolean(), benGurion, hartsfield);
+        	try {
+        		arrFlight[i] = createFlight(i, random.nextBoolean(), benGurion, hartsfield);
+        	} catch (IllegalArgumentException e) {
+        		 System.out.println(e.getMessage());
+        	}
         }
         
         // Start all flight threads
@@ -26,9 +34,12 @@ public class Main {
                 e.printStackTrace();
             }
         }
+        
+        System.out.println("\n\nFlight simulation is over.");
     }
 
-    private static Flight createFlight(int id, boolean fromIsrael, Airport benGurion, Airport hartsfield) {
+    private static Flight createFlight(int id, boolean fromIsrael, 
+    		Airport benGurion, Airport hartsfield) throws IllegalArgumentException{
         return fromIsrael ? new Flight(id, benGurion, hartsfield) : new Flight(id, hartsfield, benGurion);
     }
 }
