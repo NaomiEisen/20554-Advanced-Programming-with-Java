@@ -64,7 +64,10 @@ public class Flight extends Thread {
 		return "Flight " + flightID + " from " + departureAirport + " to " + destinationAirport;
 	}
 
-	/* Override rum method */
+	/**
+	 * The run method is the entry point for the thread. 
+	 * It simulates the flight route of the flight thread.
+	 */
 	@Override
 	public void run() {
 		// Assign a departure runway
