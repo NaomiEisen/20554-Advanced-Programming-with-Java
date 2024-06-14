@@ -44,22 +44,22 @@ public class Airport {
         }
     }
 
-    /**
-     * Sets the name of the airport.
-     * If the name is null or empty, sets 'default' as the airport name.
-     *
-     * @param name the new name of the airport
-     */
-    private void setName(String name) {
-    	// Validate name
-        if (name == null || name.trim().isEmpty()) {
-        	// If name value is illegal - set default name value
-            this.name = "default";
-        }
-        
-        // Set value
-        this.name = name;
-    }
+	/**
+	 * Sets the name of the airport. If the name is null or empty, sets 'default' as
+	 * the airport name.
+	 *
+	 * @param name the new name of the airport
+	 */
+	private void setName(String name) {
+		// Validate name
+		if (name == null || name.trim().isEmpty()) {
+			// If name value is illegal - set default name value
+			this.name = "default";
+		} else {
+			// Set value
+			this.name = name;
+		}
+	}
     
     /**
      * Gets the name of the airport.
@@ -82,9 +82,10 @@ public class Airport {
         if (numRunway <= 0) {
         	// If numRunway value is illegal - set default value
         	this.numRunway = 1;
-        }
-        // Set value
-        this.numRunway = numRunway;
+		} else {
+			// Set value
+			this.numRunway = numRunway;
+		}
     }
     
     /**
@@ -96,44 +97,6 @@ public class Airport {
         return numRunway;
     }
     
-    /**
-     * Utility method to manage runway allocation for both landing and departing.
-     * This method ensures that the first flight to request a runway will be the first to receive one.
-     *
-     * @param flightNum the flight number requesting the runway
-     * @return the number of the assigned runway, or -1 if no runways are available
-     */
-    private int allocateRunway(int flightNum) {
-        lock.lock();
-        try {
-            // Create a new condition for the current thread
-            Condition myCondition = lock.newCondition();
-            // Add the condition to the waiting queue
-            waitingQueue.add(myCondition);
-
-            // Wait until a runway becomes available and it's the thread's turn
-            while (availableRunways.isEmpty() || waitingQueue.peek() != myCondition) {
-                try {
-                    // Wait for a signal indicating a runway is available
-                    myCondition.await();
-                } catch (InterruptedException e) {
-                    // Restore the interrupted status and remove the condition from the queue
-                    Thread.currentThread().interrupt();
-                    waitingQueue.remove(myCondition);
-                    return -1;
-                }
-            }
-
-            // Remove the current thread's condition from the waiting queue
-            waitingQueue.poll();
-            // Return the available runway number
-            return availableRunways.poll();
-            
-        } finally {
-            // Ensure the lock is always released
-            lock.unlock();
-        }
-    }
 
     /**
      * Assigns a runway for a departing flight.
@@ -176,9 +139,49 @@ public class Airport {
         }
     }
     
+    /* Override toString method */
     @Override
     public String toString() {
         return name;
+    }
+    
+    /**
+     * Utility method to manage runway allocation for both landing and departing.
+     * This method ensures that the first flight to request a runway will be the first to receive one.
+     *
+     * @param flightNum the flight number requesting the runway
+     * @return the number of the assigned runway, or -1 if no runways are available
+     */
+    private int allocateRunway(int flightNum) {
+        lock.lock();
+        try {
+            // Create a new condition for the current thread
+            Condition myCondition = lock.newCondition();
+            // Add the condition to the waiting queue
+            waitingQueue.add(myCondition);
+
+            // Wait until a runway becomes available and it's the thread's turn
+            while (availableRunways.isEmpty() || waitingQueue.peek() != myCondition) {
+                try {
+                    // Wait for a signal indicating a runway is available
+                    myCondition.await();
+                } catch (InterruptedException e) {
+                    // Restore the interrupted status and remove the condition from the queue
+                    Thread.currentThread().interrupt();
+                    waitingQueue.remove(myCondition);
+                    return -1;
+                }
+            }
+
+            // Remove the current thread's condition from the waiting queue
+            waitingQueue.poll();
+            // Return the available runway number
+            return availableRunways.poll();
+            
+        } finally {
+            // Ensure the lock is always released
+            lock.unlock();
+        }
     }
 }
 

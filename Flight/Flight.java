@@ -3,11 +3,11 @@
  * It extends Thread to allow for concurrent execution of flights.
  */
 public class Flight extends Thread {
-	private int flightID;                      // Flight's number
-	private Airport departureAirport;          // The departure airport
-	private Airport destinationAirport;        // The destination airport
-	private final int DEPRAT_LAND_TIME = 2000; // Time for departure/landing
-	private final int FLIGHT_TIME = 4000;      // Time for the flight duration
+	private int flightID;                             // Flight's number
+	private Airport departureAirport;                 // The departure airport
+	private Airport destinationAirport;               // The destination airport
+	private static final int DEPART_LAND_TIME = 2000; // Time for departure/landing
+	private static final int FLIGHT_TIME = 4000;      // Time for the flight duration
 
 	/**
 	 * Constructs a Flight object with the specified flight number and airports.
@@ -70,10 +70,12 @@ public class Flight extends Thread {
 	 */
 	@Override
 	public void run() {
+		try {
+			
 		// Assign a departure runway
 		int departRunway = departureAirport.getNumRunway();  
 		// Simulate departure time
-		flightSimulator(DEPRAT_LAND_TIME); 
+		flightSimulator(DEPART_LAND_TIME); 
 
 		// Check if assignment succeeded
 		if (departRunway != -1) {
@@ -95,7 +97,7 @@ public class Flight extends Thread {
 		int landRunway = destinationAirport.getNumRunway();
 
 		// Simulate landing time
-		flightSimulator(DEPRAT_LAND_TIME);
+		flightSimulator(DEPART_LAND_TIME);
 
 		// Check if assignment succeeded
 		if (landRunway != -1) {
@@ -108,6 +110,9 @@ public class Flight extends Thread {
 		destinationAirport.free(flightID, landRunway);
 		// Notify runway free
 		Messages.free(landRunway, this.getDepartureAirport().getName(), this.getFlightID());
+		} catch (Exception e) {
+            e.printStackTrace();
+        }
 	}
 
 	/**

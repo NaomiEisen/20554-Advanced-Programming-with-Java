@@ -7,7 +7,9 @@ import java.util.Random;
 public class FlightSimulation {
 	static final int NUMBER_FLIGHTS = 10; // Number of flight threads
 	
-	/* Main method to run the airport simulation */
+	/**
+     * Main method to run the airport simulation
+     */
 	public static void main(String[] args) {
 		// Create new Airport object
 		Airport benGurion = new Airport("Ben-Gurion" , 3);
@@ -38,9 +40,11 @@ public class FlightSimulation {
         for (Flight flight : arrFlight) {
             try {
                 flight.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+			} catch (InterruptedException e) {
+				// Restore interrupted status
+				Thread.currentThread().interrupt();
+				e.printStackTrace();
+			}
         }
         
         // Print final message
