@@ -31,8 +31,7 @@ public class Main {
 			threadsArray[i].start(); 
 		}
 		
-		// Wait for all threads to complete and print the total sum
-		/* FOR ME : MAYBE CHANGE TO JOIN */
+		// Print the total sum
 		System.out.println("Total: " + manager.getTotal());
 	}
 
@@ -48,7 +47,7 @@ public class Main {
 
 		// Fill the array with random integers within the specified range
 		for (int i = 0; i < n; i++) {
-			// 101 because nextInt is exclusive of the top value
+			// +1 because nextInt is exclusive of the top value
 			array[i] = random.nextInt(NUM_RANGE + 1); 
 		}
 

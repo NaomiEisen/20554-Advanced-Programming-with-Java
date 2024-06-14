@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 /**
  * Manager class - manages the synchronization of the ConcurrentSum threads.
- * It maintains a stock of the specified integers, and provides methods to 
+ * It maintains a stock of the specified integers and provides methods to 
  * perform summation operations in a synchronized manner. 
  */
 public class Manager {
-	// stock to hold the specified array elements
+	// Stock to hold the specified array elements
 	private ArrayList<Integer> stock = new ArrayList<Integer>(); 
 	
 	// Counter to determine the completion of the process
@@ -13,17 +13,17 @@ public class Manager {
 
 	/**
      * Constructor to initialize the stock array list and set the done counter.
-     * Copy's the given array content to the stock array list.
+     * Copies the given array content to the stock array list.
      *
-     * @param stock an array of integers representing the initial stock
+     * @param initialStock an array of integers representing the initial stock
      */
-	public Manager(int[] stock) {
+	public Manager(int[] initialStock) {
 		// Copy inputed array's content 
-		for (int i = 0; i < stock.length; i++) {
-			this.stock.add(stock[i]);
+		for (int i = 0; i < initialStock.length; i++) {
+			this.stock.add(initialStock[i]);
 		}
 		// Set the done counter
-		done = stock.length - 1;
+		done = initialStock.length - 1;
 		
 		// Print initial array
 		System.out.print("Initial array: ");
@@ -39,7 +39,7 @@ public class Manager {
      * enough elements
      */
 	public synchronized int[] getTwoNum() {
-		while (done != 0 && stock.size() < 2) {
+		while (done > 0 && stock.size() < 2) {
             try {
                 wait(); // Wait for more elements to be added to the stock
             } catch (InterruptedException e) {
@@ -82,7 +82,7 @@ public class Manager {
      * @return the total sum from the stock, or 0 if the stock is empty
      */
 	public synchronized int getTotal() {
-		while (done != 0) {
+		while (done > 0) {
 			try {
 				wait(); // Wait until the done counter reaches zero
 			} catch (InterruptedException e) {

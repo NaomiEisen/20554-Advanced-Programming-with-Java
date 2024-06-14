@@ -4,13 +4,13 @@ import java.util.Scanner;
  */
 public class ScanPositiveInt {
 	private static Scanner scanner = new Scanner(System.in);
-	
+
 	/**
-     * Scans the user input for a positive integer.
-     * Keeps looping until a valid positive integer is provided.
-     *
-     * @return the positive integer entered by the user
-     */
+	 * Scans the user input for a positive integer. Keeps looping until a valid
+	 * positive integer is provided.
+	 *
+	 * @return the positive integer entered by the user
+	 */
 	public static int scan() {
 		int n;
 		// Loop until the user provides a valid input

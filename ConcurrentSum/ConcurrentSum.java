@@ -23,7 +23,8 @@ public class ConcurrentSum extends Thread {
      */
 	@Override
 	public void run() {
-		do {} while (sumOperation());
+		// Continue summing pairs until there are no more pairs
+		while (sumOperation()) {};
 	}
 
 	/**
@@ -34,13 +35,14 @@ public class ConcurrentSum extends Thread {
      */
 	private boolean sumOperation() {
 		// Get two elements from Manager's stock
-		int arr[] = manager.getTwoNum();
+		int nums[] = manager.getTwoNum();
 
 		
-		if (arr != null) {
+		if (nums != null) {
 			// If there are 2 numbers in the stock, perform the sum operation
-			System.out.printf("%s adding the number %d %d\n", this.getName() , arr[0], arr[1]);
-			manager.addSum(arr[0] + arr[1]);
+			int sum = nums[0] + nums[1];
+			System.out.printf("%s adding the numbers %d + %d = %d\n", this.getName(), nums[0], nums[1], sum);
+			manager.addSum(sum);
 			return true;
 		} else {
 			// Return false if there are no enough elements in stock
