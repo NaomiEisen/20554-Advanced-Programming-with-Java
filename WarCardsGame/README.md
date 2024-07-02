@@ -3,6 +3,12 @@
 "WarOfCards" is an engaging card game implemented in Java, designed to simulate the classic card game "War" between a player and the computer.
 <p align="left">
   <img src="https://github.com/NaomiEisen/20554-Advanced-Programming-with-Java/assets/166138356/34c7ef4d-1a07-4362-a3b0-8f8473f30940" alt="WarOfCards" width="250" height="127">
+
+  <img src="https://github.com/NaomiEisen/20554-Advanced-Programming-with-Java/assets/166138356/aae9baa2-f07e-4d18-803a-1a480f11a519" alt="WarOfCards" width="250" height="127">
+
+  <img src="https://github.com/NaomiEisen/20554-Advanced-Programming-with-Java/assets/166138356/34c7ef4d-1a07-4362-a3b0-8f8473f30940" alt="WarOfCards" width="250" height="127">
+
+  <img src="https://github.com/NaomiEisen/20554-Advanced-Programming-with-Java/assets/166138356/34c7ef4d-1a07-4362-a3b0-8f8473f30940" alt="WarOfCards" width="250" height="127">
 </p>
  ![WarOfCardsPlay](https://github.com/NaomiEisen/20554-Advanced-Programming-with-Java/assets/166138356/34c7ef4d-1a07-4362-a3b0-8f8473f30940)
  ![WarOfCards2](https://github.com/NaomiEisen/20554-Advanced-Programming-with-Java/assets/166138356/aae9baa2-f07e-4d18-803a-1a480f11a519)
