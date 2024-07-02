@@ -8,7 +8,7 @@
 
   <img src="https://github.com/NaomiEisen/20554-Advanced-Programming-with-Java/assets/166138356/a46d2961-7df9-4f05-a582-8a5503181e5b" alt="WarOfCards" width="250" height="127">
 
-  <img src="https://github.com/NaomiEisen/20554-Advanced-Programming-with-Java/assets/166138356/3bd1ca10-7e7f-4b4d-9d86-c9b82805ae71" alt="WarOfCards" width="250" height="127">
+  <img src="https://github.com/NaomiEisen/20554-Advanced-Programming-with-Java/assets/166138356/3bd1ca10-7e7f-4b4d-9d86-c9b82805ae71" alt="WarOfCards" width="260" height="127">
 </p>
 
 ## Features
