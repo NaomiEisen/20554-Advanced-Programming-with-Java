@@ -27,7 +27,11 @@ Classes and Their Roles
   
 ## Graphical Interface
 - Dialogs: Interactive dialogs guide the player through the game, providing options to continue or exit after each round and displaying messages corresponding to different game events like wins, losses, and ties.
-- 
+  
 ## Requirements
 - Java Development Kit (JDK)
 - Swing library (included with JDK)
+
+## Credits
+### Icons
+All icons used in the game are sourced from [flaticon]((https://www.flaticon.com/)). 
