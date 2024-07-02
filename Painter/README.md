@@ -23,6 +23,6 @@ Manages the user interactions and drawing logic.
 ### FXML Layout: 
 Defines the layout of the GUI, including buttons for color and shape selection, and the drawing area.
 
-## ✔️ Requirements
+## ✔ Requirements
 - Java 8 or newer
 - JavaFX SDK
