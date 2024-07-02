@@ -9,7 +9,7 @@ Graded 100 :)
 
 The `FlightSimulation` program models an airport system where multiple flights take off and land between two airports. The simulation uses multi-threading to concurrently execute the flights, providing a realistic view of airport operations.
 
-## Main Components
+## Components
 
 ### FlightSimulation Class: 
 This is the main class that runs the simulation. It creates airport objects, generates flight objects, starts the flight threads, and waits for all flights to finish.
