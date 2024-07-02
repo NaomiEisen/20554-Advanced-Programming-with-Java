@@ -1,6 +1,10 @@
 # Four In A Row Game
 
 "Four In A Row" is a classic connect-four game implemented in JavaFX. Players alternate turns to drop colored tokens into a seven-column, six-row vertically suspended grid. The objective is to be the first to form a horizontal, vertical, or diagonal line of four of one's own tokens.
+<p align="left">
+  <img src="https://github.com/NaomiEisen/20554-Advanced-Programming-with-Java/assets/166138356/1ef38a75-038a-425e-99f8-6a40bc3acd12" alt="Painter" width="500" height="355">
+</p>
+
 
 ## Features
 - Interactive Gameplay: Engage in a classic game of strategy against another player, with easy-to-use graphical user interface.
