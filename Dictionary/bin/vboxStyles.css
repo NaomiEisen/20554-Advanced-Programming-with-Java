@@ -1,6 +1,0 @@
-/* highlight VBox style */
-
-.highlight {
-    -fx-border-color: #a83e4f !important; /* highlight border color */
-    -fx-effect: dropshadow(three-pass-box, #a83e4f, 0, 0, 3, 3); /* drop shadow */
-}
