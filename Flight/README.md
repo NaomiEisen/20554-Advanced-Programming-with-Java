@@ -11,13 +11,14 @@ The `FlightSimulation` program models an airport system where multiple flights t
 
 ### Main Components
 
-1. **FlightSimulation Class**: This is the main class that runs the simulation. It creates airport objects, generates flight objects, starts the flight threads, and waits for all flights to finish.
-
-2. **Flight Class**: Represents a flight that departs from one airport and lands at another. This class extends `Thread` to enable concurrent execution of multiple flight objects.
-
-3. **Airport Class**: Represents an airport with a specified number of runways. Manages the availability of runways for flight departures and landings.
-
-4. **Messages Class**: Provides static methods for displaying informative messages related to flight operations, such as departures, landings, and runway availability.
+## FlightSimulation Class: 
+This is the main class that runs the simulation. It creates airport objects, generates flight objects, starts the flight threads, and waits for all flights to finish.
+## Flight Class
+Represents a flight that departs from one airport and lands at another. This class extends `Thread` to enable concurrent execution of multiple flight objects.
+## Airport Class
+Represents an airport with a specified number of runways. Manages the availability of runways for flight departures and landings.
+## Messages Class*
+Provides static methods for displaying informative messages related to flight operations, such as departures, landings, and runway availability.
 
 ## Requirements
 - Java Development Kit (JDK) 8 or higher
