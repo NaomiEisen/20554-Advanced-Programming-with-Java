@@ -10,3 +10,5 @@ This repository contains some of the projects and assignments of the course and 
 - **Painter | Maman 13:** Painter application.
 - **List | Maman 14:** Generic list implementation.
 - **Flight | Maman 15:** Simulates plane flights using multi-threading.
+
+☝️ You may find more content that could be helpful for the course in other repositories of Java projects.
