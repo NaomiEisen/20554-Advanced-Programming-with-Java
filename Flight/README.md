@@ -20,5 +20,5 @@ The `FlightSimulation` program models an airport system where multiple flights t
 4. **Messages Class**: Provides static methods for displaying informative messages related to flight operations, such as departures, landings, and runway availability.
 
 ## Requirements
-• Java Development Kit (JDK) 8 or higher
-• A Java IDE (Eclipse, IntelliJ IDEA, NetBeans, etc.)
+- Java Development Kit (JDK) 8 or higher
+- A Java IDE (Eclipse, IntelliJ IDEA, NetBeans, etc.)
