@@ -34,4 +34,4 @@ Classes and Their Roles
 
 ## Credits
 ### Icons
-All icons used in the game are sourced from [flaticon]((https://www.flaticon.com/)). 
+All icons used in the game are sourced from [flaticon](https://www.flaticon.com/).
