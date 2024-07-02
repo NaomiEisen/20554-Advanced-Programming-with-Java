@@ -28,5 +28,5 @@ If all columns are filled without any player forming a line of four, the game en
 Players can press the 'clear' button to reset the game at any time.
 
 ## Requirements
-- Java 8 or later.
+- Java Development Kit (JDK) 8 or higher.
 - JavaFX library.
