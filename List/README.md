@@ -1,6 +1,6 @@
 # Java List Implementation
 
-This Java program implements a generic linked list (List<E>) and demonstrates its use through various operations. The List class provides fundamental operations such as adding elements, removing elements, and accessing the head and tail of the list. It supports generic elements, allowing it to handle various data types. The program also includes utility classes Person and Max to demonstrate the list uses.
+This Java program implements a generic linked list (`List<E>`) and demonstrates its use through various operations. The List class provides fundamental operations such as adding elements, removing elements, and accessing the head and tail of the list. It supports generic elements, allowing it to handle various data types. The program also includes utility classes Person and Max to demonstrate the list uses.
 ** Graded 100 
 
 ## Features
