@@ -1,4 +1,4 @@
-# War Of Cards Game 🃏
+# 🃏 War Of Cards Game 
 
 "WarOfCards" is an engaging card game implemented in Java, designed to simulate the classic card game "War" between a player and the computer.
 
