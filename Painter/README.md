@@ -1,6 +1,8 @@
 # 🎨 Painter Application
 
 The Painter application is a JavaFX-based drawing program that allows users to interactively create and manipulate basic geometric shapes such as lines, rectangles, and ellipses on a canvas. Users can select different colors, decide whether shapes should be filled or outlined, and choose the type of shape they want to draw.
+![image](https://github.com/NaomiEisen/20554-Advanced-Programming-with-Java/assets/166138356/b0babe91-b2bc-48c2-8ba8-b43490dbf217)
+
 
 ## >> Features
 - Dynamic Drawing: Users can draw lines, rectangles, and ellipses by clicking and dragging on the canvas.
