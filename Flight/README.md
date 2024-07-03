@@ -1,4 +1,4 @@
-# Flight Program
+# ✈️ Flight Program
 
 This project is part of the '20554 Advanced Programming with Java' course. 
 It simulates plane flights using multi-threading, allowing you to observe the behavior of flights between two airports.
