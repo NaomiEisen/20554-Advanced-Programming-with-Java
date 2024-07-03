@@ -21,7 +21,7 @@ Graded 100 :)
 -Undo/Redo: Users can undo their last action or clear the canvas via buttons on the GUI.
 
 
-## >> Contents
+## Contents
 - ### Painter: 
 The main class that sets up the JavaFX stage and loads the FXML layout.
 - ### PainterController: 
