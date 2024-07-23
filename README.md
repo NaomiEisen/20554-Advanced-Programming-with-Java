@@ -1,7 +1,7 @@
 # 20554 Advanced Programming with Java
 
 Welcome to the repository for the '20554 Advanced Programming with Java' course. 
-This repository contains some of the projects and assignments of the course and may help some students along the way :)
+This repository contains some of the projects and assignments of the course :)
 
 ## Contents
 
