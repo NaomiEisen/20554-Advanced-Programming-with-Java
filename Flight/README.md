@@ -22,4 +22,4 @@ Provides static methods for displaying informative messages related to flight op
 
 ## Requirements
 - Java Development Kit (JDK) 8 or higher
-- A Java IDE (Eclipse, IntelliJ IDEA, NetBeans, etc.)
+
