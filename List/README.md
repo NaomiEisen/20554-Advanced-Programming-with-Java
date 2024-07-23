@@ -34,4 +34,3 @@ Shows how to create a list of Person objects, handle potential exceptions, displ
 
 ## Requirements
 - Java Development Kit (JDK) 8 or higher
-- A Java IDE (Eclipse, IntelliJ IDEA, NetBeans, etc.)
